@@ -3,40 +3,91 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&display=swap');
-
 :root {
   --primary-dark: #5651e5;
   --primary-light: #709dff;
 }
-
-.icon {
-  color: var(--primary-dark);
-}
-
 @layer base {
   body {
     @apply font-[Poppins]
   }
+  img{
+    width:100%;
+    height:100%;
+  }
+}
 
-  li {
-    @apply p-4
-  }
+.overlay::after{
+  content:"";
+  position: absolute;
+width:100%;
+height:100%;
+top:0;
 
-  h1 {
-    @apply text-3xl md:text-4xl font-bold
-  }
+  background-color: rgba(0,0,0,0.3);
+}
+nav,
+.hero-text{
+  color:#fff;
+}
+.btn{
+  background-color:#000
+}
 
-  h2 {
-    @apply text-3xl font-bold
-  }
-
-  h3 {
-    @apply text-xl font-bold
-  }
-  button {
-    @apply p-3 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white rounded-md
-  }
-  .icon {
-    @apply text-2xl cursor-pointer
-  }
+.openMenu{
+  background-color: rgba(255,255,255,0.5);
+  color:#000;
+}
+.icon {
+  color: #000;
+}
+.searchIcon,
+.serviceIcon,
+.primarybtn{
+  background-color: rgb(14, 86, 141);
+  
+  
+}
+input{
+  color:#000;
+  width:100%;
+}
+.wrapper {
+  width: 90%;
+  margin: auto;
+}
+.main-slide {
+  height: 100%;
+  position: relative;
+}
+.slide-wrapper {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+.slide {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  text-transform: capitalize;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  right: 0;
+  transition: transform 0.5s ease-in-out;
+}
+.preSlide {
+  transform: translateX(-100%);
+}
+.activeSlide {
+  transform: translateX(0);
+  opacity: 1;
+}
+.nextSlide {
+  transform: translateX(100%);
 }

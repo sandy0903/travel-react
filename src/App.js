@@ -1,23 +1,22 @@
 import React from 'react';
-import Carousel from './components/Carousel';
-import Destinations from './components/Destinations';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
-import Navbar from './components/Navbar';
-import Search from './components/Search';
-import Selects from './components/Selects';
-
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Book from './page/Book';
+import DestinationPage from './page/DestinationPage';
+import HomePage from './page/HomePage';
+import TravelPage from './page/TravelPage';
+import Views from './page/Views';
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Destinations />
-      <Search />
-      <Selects />
-      <Carousel />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="destination" element={<DestinationPage/>}/>
+        <Route path="travel" element={<TravelPage/>}/>
+        <Route path="view" element={<Views/>}/>
+        <Route path="book" element={<Book/>}/>
+
+      </Routes>
+    </Router>
   );
 }
 
